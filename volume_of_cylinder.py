@@ -25,16 +25,16 @@ def main():
         # check for integers & call function
         radius_as_float = float(radius_as_string)
         height_as_float = float(height_as_string)
-        if radius == radius_as_float and height == height_as_float:
+        if radius != radius_as_float or height != height_as_float:
+            print("Invalid. Enter positive integers only\nDone.")
+        elif radius < 0 or height < 0:
+            print("Invalid. Enter positive integers only\nDone.")
+        else:
             print("The volume is {0}cm³\nDone.".format(
                   round(volume_of_cylinder(radius, height), 4)))
             # https://www.kite.com/python/answers/how-to-limit-a-float-to-two-
             #     decimal-places-in-python#:~:text=Call%20str.,decimal%20place
             #     s%20as%20a%20string.
-        elif radius < 0 or height < 0:
-            print("Invalid. Enter positive integers only\nDone.")
-        else:
-            print("Invalid. Enter positive integers only\nDone.")
     except (Exception):
         print("Invalid. Enter positive integers only\nDone.")
 
